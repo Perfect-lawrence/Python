@@ -4,6 +4,7 @@
 
 import smtplib,sys
 from email.mime.text import MIMEText
+# 需求：发邮件给多个人
 
 class Mstmp():
     def __init__(self,target,subject,content):
