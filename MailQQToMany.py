@@ -17,9 +17,8 @@ def Mail():
     password = "xxx"
 
     content = """"
-    我们平时需要使用 Python 发送各类邮件，这个需求怎么来实现？答案其实很简单，smtplib 和email 库可以帮忙实现这个需求。smtplib 和 email 的组合可以用来发送各类邮件：普通文本，HTML 形式，带附件，群发邮件，带图片的邮件等等。我们这里将会分几节把发送邮件功能解释完成。
-smtplib 是 Python 用来发送邮件的模块，email 是用来处理邮件消息。
-发送普通文本的邮件，只需要 email.mime.text 中的 MIMEText 的 _subtype 设置为 plain。首先导入 smtplib 和 mimetext。创建 smtplib.smtp 实例，connect 邮件 smtp 服务器，login 后发送: 
+    我们平时需要使用 Python 发送各类邮件，这个需求怎么来实现？答案其实很简单，smtplib 和email 库可以帮忙实现这个需求。smtplib 和 email 的组合可以用来发送各类邮件：普通文本，HTML 形式，带附件，群发邮件，带图片的邮件等等。
+    smtplib 是 Python 用来发送邮件的模块，email 是用来处理邮件消息。发送普通文本的邮件，只需要 email.mime.text 中的 MIMEText 的 _subtype 设置为 plain。首先导入 smtplib 和 mimetext。创建 smtplib.smtp 实例，connect 邮件 smtp 服务器，login 后发送: 
 """
     result = True
     try:
