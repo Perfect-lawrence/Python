@@ -10,7 +10,8 @@ from email.utils import formataddr
 
 # 发件人
 sender='xx@xx.cn'
-# user登录邮箱的用户名，password登录邮箱的密码（授权码，即客户端密码，非网页版登录密码），但用腾讯邮箱的登录密码也能登录成功
+# 登录邮箱的用户名
+
 login_password = 'xx'
 stmp_server = "smtp.exmail.qq.com"
 # 收件人邮箱账号
