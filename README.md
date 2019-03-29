@@ -1526,3 +1526,8 @@ class Anagram:
     print(Solution3('apple','pleap'))
 
 ```
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> b5e5a7f9e2642e301372d897e9fe15ec0639ad73
