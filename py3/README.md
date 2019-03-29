@@ -7,9 +7,7 @@ pip install virtualenv
 - 为一个工程创建一个虚拟环境
 ```
 mkdir my_project_dir  && cd my_project_dir
-```
-- 
-```
+
 /usr/bin/virtualenv  -p /usr/bin/python2.7 my_project_dir/flask2  # -p参数指定Python解释器程序路径
 /usr/local/python367/bin/virtualenv -p /usr/local/python367/bin/python3 my_project_dir/flask3
 ```
