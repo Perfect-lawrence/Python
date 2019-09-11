@@ -201,7 +201,7 @@ Server Error.
 # requests 高级操作
 import requests
 files = {'file': open('/home/lawrence/Desktop/favicon.ico','rb')}
-response = requests.post("http://httpbin.org/post',files=files)
+response = requests.post("http://httpbin.org/post',files=filesi")
 print(response.text)
 
 # 获取cookie
@@ -433,10 +433,84 @@ button.click()
 # 交互动作
 ## 将动作附加岛动作链链中串执行
 from selenium import webdriver
-from selenium.webdriver imoprt ActionChains
+from selenium.webdriver import ActionChains
 browser = webdriver.Chrome()
-url = 'http://www.ruoobb.com/try/try.php?
-browser.get('https://www.taobao.com')
+url = 'http://www.runoob.com/try/try.php?filename=jqueryui-api-droppable'
+browser.get(url)
+browser.switch_to_frame('iframeResult')
+source = browser.find_element_by_css_selector('#draggable')
+target = browser.find_element_by_css_selector('#droppable')
+actions = ActionChains(browser)
+actions.drag_and_drop(source,target)
+actions.perform()
 
+## 执行JavaScript
+from selenium import webdriver
 
+browser = webdriver.Chrome()
+browser.get('https://www.zhihu.com/explore')
+browser.execute_script('window.scrollTo(0,document.body.scrollHeight)')
+browser.execute_script('alert("To Botton")')
+
+# 获取元数信息
+## 获取属性
+from selenium import webdriver
+from selenium.webdriver import ActionChains
+browser = webdriver.Chrome()
+url = 'https://www.zhihu.com/explore'
+browser.get(url)
+logo = browser.find_element_by_id('Icon ZhihuLogo ZhihuLogo--blue Icon--logo')
+print(logo)
+print(logo.get_attribute('class'))
+
+## 获取文本值
+from selenium import webdriver
+
+browser = webdriver.Chrome()
+url= 'https://www.zhihu.com/explore'
+browser.get(url)
+input = browser.find_element_by_class_name('zu-top-add-question')
+print(input.text)
+
+# 获取 ID、位置、标签名、大小
+from selenium import webdriver
+
+browser = webdriver.Chrome()
+url = 'https://www.zhihu.com/explore'
+browser.get(url)
+input = browser.find_element_by_class_name('zu-top-add-questions')
+print(input.id)
+print(input.location)
+print(input.tag_name)
+print(input.size)
+
+# Frame
+import time
+from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
+
+browser = webdriver.Chrome()
+url = 'http://www.runoob.com/try/try.php?filename=jqueryui-api-droppable'
+browser.get(url)
+browser.switch_to_frame('iframeResult')
+source = browser.find_element_by_css_selector('#draggable')
+print(source)
+try:
+    logo = browser.find_element_by_class_name('logo')
+except NoSuchElementException:
+    print('No LOGO')
+browser.switch_to.parent_frame()
+logo = browser.find_element_by_class_name('logo')
+print(logo)
+print(logo.text)
+
+# 等待
+## 隐式等待
+from selenium import webdriver
+
+browser = webdriver.Chrome()
+browser.implicitly_wait(10) 
+browser.get('https://www.zhihu.com/explore')
+input = browser.find_element_by_class_name('zu-top-add-questions')
+print(input)
 
